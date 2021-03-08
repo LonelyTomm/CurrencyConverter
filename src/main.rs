@@ -1,10 +1,14 @@
+mod utils;
+
 use std::io;
 use reqwest;
 use serde::Deserialize;
 use std::collections::HashMap;
+use crate::utils::coloring;
 
 fn main() {
     let rates = get_rates();
+    println!("{}", coloring::color_text(coloring::Colors::Blue, "This is red text"));
 
     loop {
         println!("Insert a currency string to convert KZT to:");
